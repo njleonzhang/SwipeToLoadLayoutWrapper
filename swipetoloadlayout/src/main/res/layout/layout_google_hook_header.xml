@@ -14,5 +14,5 @@
         app:gcp_arrow_width="8dp"
         android:layout_width="@dimen/refresh_drawable_size_google"
         android:layout_height="@dimen/refresh_drawable_size_google"
-        android:layout_gravity="center" />
+        android:layout_gravity="center"/>
 </com.leon.swipeToLoadLayout.header.GoogleCircleHookRefreshHeaderView>

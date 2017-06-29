@@ -18,6 +18,10 @@ import com.aspsine.swipetoloadlayout.SwipeToLoadLayout;
  */
 
 public class SwipeToLoadLayoutWrapper extends LinearLayout {
+    public static final int TYPE_GOOGLE = 875;
+    public static final int TYPE_GOOGLE_CIRCLE = 47;
+    public static final int TYPE_CLASSIC = 368;
+
     private SwipeToLoadLayout mSwipe;
     private RecyclerView mRecyclerView;
     private LayoutInflater mLayoutInflater;
@@ -49,18 +53,59 @@ public class SwipeToLoadLayoutWrapper extends LinearLayout {
         mRecyclerView = (RecyclerView) findViewById(R.id.swipe_target);
     }
 
-    public void setHeaderView(View headerView) {
+    public SwipeToLoadLayoutWrapper setHeaderView(View headerView) {
         mSwipe.setRefreshHeaderView(headerView);
+        return this;
     }
 
-    public void setFooterView(View footerView) {
+    public SwipeToLoadLayoutWrapper setHeaderView(int type) {
+        switch (type) {
+            case TYPE_GOOGLE:
+                setHeaderView(mLayoutInflater.inflate(R.layout.layout_google_header, mSwipe, false));
+                break;
+
+            case TYPE_GOOGLE_CIRCLE:
+                setHeaderView(mLayoutInflater.inflate(R.layout.layout_google_hook_header, mSwipe, false));
+                break;
+        }
+        return this;
+    }
+
+    public SwipeToLoadLayoutWrapper setFooterView(View footerView) {
         mSwipe.setLoadMoreFooterView(footerView);
         setLoadMoreStartListener();
+        return this;
     }
 
-    public void setDefaultHeadAndFoot() {
-        setHeaderView(mLayoutInflater.inflate(R.layout.layout_google_header, mSwipe, false));
-        setFooterView(mLayoutInflater.inflate(R.layout.layout_google_footer, mSwipe, false));
+    public SwipeToLoadLayoutWrapper setFooterView(int type) {
+        switch (type) {
+            case TYPE_GOOGLE:
+                setFooterView(mLayoutInflater.inflate(R.layout.layout_google_footer, mSwipe, false));
+                break;
+
+            case TYPE_GOOGLE_CIRCLE:
+                setFooterView(mLayoutInflater.inflate(R.layout.layout_google_hook_footer, mSwipe, false));
+                break;
+
+            case TYPE_CLASSIC:
+                setFooterView(mLayoutInflater.inflate(R.layout.layout_classic_footer, mSwipe, false));
+        }
+        return this;
+    }
+
+    public SwipeToLoadLayoutWrapper setHeadAndFoot(int type) {
+        switch (type) {
+            case TYPE_GOOGLE:
+                setHeaderView(mLayoutInflater.inflate(R.layout.layout_google_header, mSwipe, false));
+                setFooterView(mLayoutInflater.inflate(R.layout.layout_google_footer, mSwipe, false));
+                break;
+
+            case TYPE_GOOGLE_CIRCLE:
+                setHeaderView(mLayoutInflater.inflate(R.layout.layout_google_hook_header, mSwipe, false));
+                setFooterView(mLayoutInflater.inflate(R.layout.layout_google_hook_footer, mSwipe, false));
+                break;
+        }
+        return this;
     }
 
     private void setLoadMoreStartListener() {

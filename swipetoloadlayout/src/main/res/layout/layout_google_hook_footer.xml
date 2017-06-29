@@ -6,7 +6,7 @@
     android:background="@android:color/transparent"
     android:orientation="vertical">
 
-    <com.aspsine.swipetoloadlayout.demo.view.GoogleCircleProgressView
+    <com.leon.swipeToLoadLayout.widget.GoogleCircleProgressView
         android:id="@+id/googleProgress"
         app:gcp_show_arrow="true"
         app:gcp_progress_stoke_width="2dp"

@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        mWrapper.setDefaultHeadAndFoot();
+        mWrapper.setHeaderView(SwipeToLoadLayoutWrapper.TYPE_GOOGLE)
+            .setFooterView(SwipeToLoadLayoutWrapper.TYPE_CLASSIC);
     }
 }
