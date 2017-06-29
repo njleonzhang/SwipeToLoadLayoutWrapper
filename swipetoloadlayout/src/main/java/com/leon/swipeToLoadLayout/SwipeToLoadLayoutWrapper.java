@@ -51,15 +51,14 @@ public class SwipeToLoadLayoutWrapper extends LinearLayout {
 
     public void setHeaderView(View headerView) {
         mSwipe.setRefreshHeaderView(headerView);
-        setLoadMoreStartListener();
     }
 
     public void setFooterView(View footerView) {
         mSwipe.setLoadMoreFooterView(footerView);
+        setLoadMoreStartListener();
     }
 
     public void setDefaultHeadAndFoot() {
-        Context context = getContext();
         setHeaderView(mLayoutInflater.inflate(R.layout.layout_google_header, mSwipe, false));
         setFooterView(mLayoutInflater.inflate(R.layout.layout_google_footer, mSwipe, false));
     }
