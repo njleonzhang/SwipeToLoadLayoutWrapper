@@ -1,7 +1,7 @@
 # SwipeToLoadLayoutWrapper
 [SwipeToLoadLayout](https://github.com/Aspsine/SwipeToLoadLayout)的封装，便于使用。
 
-# 默认的view
+
  ```
  private SwipeToLoadLayoutWrapper mWrapper;
 
