@@ -1,5 +1,5 @@
 # SwipeToLoadLayoutWrapper
-(SwipeToLoadLayout)[https://github.com/Aspsine/SwipeToLoadLayout]的封装，便于使用。
+[SwipeToLoadLayout](https://github.com/Aspsine/SwipeToLoadLayout)的封装，便于使用。
 
 # 默认的view
  ```
@@ -20,4 +20,4 @@
   swipeWrapper.setFooterView(footerView);
 ```
 
-关于如何自定义head和footer，参见(SwipeToLoadLayout)[https://github.com/Aspsine/SwipeToLoadLayout]文档。
+关于如何自定义head和footer，参见[SwipeToLoadLayout](https://github.com/Aspsine/SwipeToLoadLayout)文档。
